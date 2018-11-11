@@ -10,7 +10,7 @@ class Fita:
         fita = '$'
         for letra in (l for l in palavra if l in self.alfabeto):
             fita += letra
-        fita += '$'
+        fita += '#'
         self._fita = list(fita)
 
     def escrever(self,letra):
@@ -41,10 +41,10 @@ class Fita:
         return len(self._fita)
 
     def mover_cabecote(self,direcao):
-        if direcao == Direcao.Esquerda:
-            self.posicao_cabecote -= 1
-        elif direcao == Direcao.Direita:
+        if direcao == Direcao.Direita:
             self.posicao_cabecote += 1
+        elif direcao == Direcao.Esquerda:
+            self.posicao_cabecote -= 1
 
         if self.posicao_cabecote > len(self._fita) - 1:
             self._fita += '#'
